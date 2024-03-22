@@ -7,29 +7,32 @@ let parola = prompt('Inserisci una parola');
 
 // Creare una funzione per capire se la parola inserita è palindroma.
 
-// Diamo il nome alla funzione che andremo ad invocare
-function palindroma(text) {
-
-    // Controlliamo con un ciclo for la parola partendo dalla sua metà o dalle sue estremità
-    for (let i = 0; i < parola.length / 2; i++) {
-
-        // La parola:
-        // SE la prima lettera coinciderà con la prima lettera scritta
-        // - allora sarà true
-        // ALTRIMENTI sarà false
-        if (parola[i] !== parola[parola.length - 1 - i]) {
-            // Return false
-            return false;
-        }
-        // Return true
-        return true;
-    }
-}
-
-
-
+// SE parola è palindroma ALLORA 'Rispondi positivamente'
 if (palindroma(parola)) {
     console.log('La parola è Palindroma!');
+    // ALTRIMENTI 'Rispondi negativamente'
 } else {
     console.log('La parola non è Palindroma');
+}
+
+// Diamo il nome alla funzione che andremo ad invocare
+
+// Input: text da controllare se palindromo
+// Output: true SE palindromo ALTRIMENTI False
+function palindroma(text) {
+
+    let reversWord = ''
+
+    for (let i = text.length -1; i >= 0; i--) {
+        console.log(text[i]);
+        reversWord += text[i];
+        console.log(reversWord)
+    }
+
+    if (text === reversWord) {
+        return true
+    } else {
+        return false
+    }
+
 }
